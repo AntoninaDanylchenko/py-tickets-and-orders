@@ -91,9 +91,9 @@ class Ticket(models.Model):
                              f"{self.movie_session.cinema_hall.rows})"]
         if not (1 <= self.seat <= self.movie_session.cinema_hall.seats_in_row):
             seats = self.movie_session.cinema_hall.seats_in_row
-            errors["seat"] = [f'seat number must be in available '
-                              f'range: (1, seats_in_row): (1, '
-                              f'{seats})']
+            errors["seat"] = [f"seat number must be in available "
+                              f"range: (1, seats_in_row): (1, "
+                              f"{seats})"]
         if errors:
             raise ValidationError(errors)
 
